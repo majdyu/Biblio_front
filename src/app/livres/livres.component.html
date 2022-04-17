@@ -1,0 +1,27 @@
+<div class="container">
+  <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
+    (click)="goToCreatePage()">Ajouter un livre</button>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Categorie</th>
+        <th> </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let  livre of livres">
+        <td>{{livre.name}}</td>
+        <td>{{livre.author}}</td>
+        <td>{{livre.category?.name}}</td>
+        
+        <td><a class="btn btn-primary" style="padding: 0;" [routerLink]="['/editLivre', livre.id]">edit</a></td>
+        <td><a class="btn btn-danger" style="padding: 0;" (click)="deleteLivre(livre.id)">delete</a> </td>
+       
+      </tr>
+    </tbody>
+  </table>
+
+</div>
