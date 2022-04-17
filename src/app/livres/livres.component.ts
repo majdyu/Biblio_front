@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ILivre } from '../models/livre.model';
-import { LivreService } from '../service/livre.service';
+import { LivreService } from '../services/livre.service';
+
 
 @Component({
   selector: 'app-livres',

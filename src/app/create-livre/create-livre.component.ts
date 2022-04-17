@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { ILivre, Livre } from '../models/livre.model';
-import { CategoriesService } from '../service/categories.service';
-import { LivreService } from '../service/livre.service';
+import { CategoriesService } from '../services/categories.service';
+import { LivreService } from '../services/livre.service';
 
 @Component({
   selector: 'app-create-livre',
