@@ -1,0 +1,29 @@
+<div class="container">
+    <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
+      (click)="goToCreatePage()">Ajouter un livre</button>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Livre</th>
+          <th>Emprunteur</th>
+          <th>Date debut</th>
+          <th>Date fin</th>
+          
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let  emprunt of emprunts">
+          <td>{{emprunt.livre.name}}</td>
+          <td>{{emprunt.student.firstName}} {{emprunt.student.lastName}}</td>
+          <td>{{emprunt.start}}</td>
+          <td>{{emprunt.end}}</td>
+         
+          <td><a class="btn btn-primary" style="padding: 0;" (click)="returnBook(emprunt.id)">retourner</a></td>
+       
+         
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>

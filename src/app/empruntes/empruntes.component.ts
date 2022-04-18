@@ -42,13 +42,28 @@ export class EmpruntesComponent implements OnInit {
     this.router.navigate(["/livres"])
   }
   createEmprunt(){
-    console.log(this.emprunt);
-    this.emprunt.start = new Date(this.emprunt.start)
-    this.emprunt.end = new Date(this.emprunt.end)
-    this.empruntService.createEmprunt(this.emprunt).subscribe(res => {
-      console.log(res);
-      
-    })
-
+    if(this.valideForm()){
+      console.log(this.emprunt);
+      this.emprunt.start = new Date(this.emprunt.start)
+      this.emprunt.end = new Date(this.emprunt.end)
+      this.empruntService.createEmprunt(this.emprunt).subscribe(res => {
+        console.log(res);
+      })
+    }else{
+      alert("invalid form")
+    }
+ 
+  }
+  valideForm(): boolean {
+    let result = false;
+    if(
+      this.emprunt.end &&
+      this.emprunt.start &&
+      this.emprunt.livre &&
+      this.emprunt.student
+    ) {
+      result = true;
+    }
+    return result;
   }
 }

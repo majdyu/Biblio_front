@@ -9,6 +9,7 @@ import { EtudiantsComponent } from './etudiants/etudiants.component';
 import { HomeComponent } from './home/home.component';
 import { LivresComponent } from './livres/livres.component';
 import { ProfesseursComponent } from './professeurs/professeurs.component';
+import { ReturnLivreComponent } from './return-livre/return-livre.component';
 
 const routes: Routes = [{
   path: 'livres',
@@ -57,6 +58,10 @@ const routes: Routes = [{
 {
   path: "categories",
   component: CategoriesComponent
+},
+{
+  path: "list-emprunts",
+  component: ReturnLivreComponent
 }
 ];
 

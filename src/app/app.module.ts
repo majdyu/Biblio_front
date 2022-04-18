@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CreateCategoryComponent } from './create-category/create-category.component';
+import { ReturnLivreComponent } from './return-livre/return-livre.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CreateCategoryComponent } from './create-category/create-category.compo
     CreateLivreComponent,
     CreateStudentComponent,
     CategoriesComponent,
-    CreateCategoryComponent
+    CreateCategoryComponent,
+    ReturnLivreComponent
   ],
   imports: [
     BrowserModule,
