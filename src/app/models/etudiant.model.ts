@@ -7,7 +7,7 @@ export interface IEtudiant {
 
 }
 
-export class Etudiant {
+export class Etudiant implements IEtudiant {
     constructor(
         public id?: number,
         public  firstName?: string,

@@ -7,6 +7,7 @@
         <th>Name</th>
         <th>Author</th>
         <th>Categorie</th>
+        <th>Emprunter</th>
         <th> </th>
         <th></th>
       </tr>
@@ -16,7 +17,7 @@
         <td>{{livre.name}}</td>
         <td>{{livre.author}}</td>
         <td>{{livre.category?.name}}</td>
-        
+        <td>{{livre.isBorrowed}}</td>
         <td><a class="btn btn-primary" style="padding: 0;" [routerLink]="['/editLivre', livre.id]">edit</a></td>
         <td><a class="btn btn-danger" style="padding: 0;" (click)="deleteLivre(livre.id)">delete</a> </td>
        

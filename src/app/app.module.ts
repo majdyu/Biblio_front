@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { CreateLivreComponent } from './create-livre/create-livre.component';
 import { FormsModule } from '@angular/forms';
 import { CreateStudentComponent } from './create-student/create-student.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { CreateCategoryComponent } from './create-category/create-category.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CreateStudentComponent } from './create-student/create-student.componen
     EmpruntesComponent,
     HomeComponent,
     CreateLivreComponent,
-    CreateStudentComponent
+    CreateStudentComponent,
+    CategoriesComponent,
+    CreateCategoryComponent
   ],
   imports: [
     BrowserModule,

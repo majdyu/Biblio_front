@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CategoriesComponent } from './categories/categories.component';
+import { CreateCategoryComponent } from './create-category/create-category.component';
 import { CreateLivreComponent } from './create-livre/create-livre.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { EmpruntesComponent } from './empruntes/empruntes.component';
@@ -43,6 +45,18 @@ const routes: Routes = [{
 {
   path: "editStudent/:id",
   component: CreateStudentComponent
+},
+{
+  path: "createCategory",
+  component: CreateCategoryComponent
+},
+{
+  path: "editCategory/:id",
+  component: CreateCategoryComponent
+},
+{
+  path: "categories",
+  component: CategoriesComponent
 }
 ];
 

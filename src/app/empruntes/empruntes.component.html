@@ -1,1 +1,32 @@
-<p>empruntes works!</p>
+<div class="row align-items-center" style=" margin-top:  30px">
+    <div class="col-4"></div>
+    <form class="col-4" style="width: 40%;">
+        <div class="form-group">
+            <label> Date de debut</label>
+            <input type="date" class="form-control" id="start" name="start" [(ngModel)]="emprunt.start">
+        </div>
+        <div class="form-group">
+            <label> Date de fin</label>
+            <input type="date" class="form-control" id="end" name="end" [(ngModel)]="emprunt.end">
+        </div>
+        <div class="form-group">
+            <label>Livre</label>
+            <select class="form-control" id="livre" name="livre" [(ngModel)]="emprunt.livre">
+                <option *ngFor="let livre of livres" [ngValue]="livre">{{livre.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Etudiant</label>
+            <select class="form-control" id="student" name="student" [(ngModel)]="emprunt.student">
+                <option *ngFor="let etudiant of etudiants" [ngValue]="etudiant">{{etudiant.firstName}} {{etudiant.lastName}}</option>
+            </select>
+        </div>
+       
+        <div style=" text-align: center;">
+            <button class="btn btn-secondary " (click)="returnToList()"> Annuler</button>
+            <button class="btn btn-success ml-2" (click)="createEmprunt()">Créer </button>
+           
+        </div>
+        
+    </form>
+</div>
