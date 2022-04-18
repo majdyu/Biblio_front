@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Livre } from '../models/livre.model';
 
@@ -25,5 +26,8 @@ export class LivreService {
   }
   deleteLivre(id: string){
     return this.http.delete(environment.api+"/api/livres/"+id);
+  }
+  findAllNotBorrowed(): Observable<Livre[]>{
+    return this.http.get<Livre[]>(environment.api+"/api/livres-non-emprunter");
   }
 }
