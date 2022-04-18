@@ -17,4 +17,7 @@ export class CategoryService {
   createCategory(category: Category){
     return this.http.post(environment.api+"/api/categories",category);
   }
+  findById(id:string){
+    return this.http.get(environment.api+"/api/categories/"+id);
+  }
 }

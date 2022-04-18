@@ -4,17 +4,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { EtudiantsComponent } from './etudiants/etudiants.component';
-import { LivresComponent } from './livres/livres.component';
-import { ProfesseursComponent } from './professeurs/professeurs.component';
-import { EmpruntesComponent } from './empruntes/empruntes.component';
+import { LivresComponent } from './Components/livres/livres.component';
+import { ProfesseursComponent } from './Components/professeurs/professeurs.component';
 import { HomeComponent } from './home/home.component';
-import { CreateLivreComponent } from './create-livre/create-livre.component';
 import { FormsModule } from '@angular/forms';
-import { CreateStudentComponent } from './create-student/create-student.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { CreateCategoryComponent } from './create-category/create-category.component';
-import { ReturnLivreComponent } from './return-livre/return-livre.component';
+import { CategoriesComponent } from './Components/categories/categories.component';
+import { CreateCategoryComponent } from './Components/create-category/create-category.component';
+import { ReturnLivreComponent } from './Components/return-livre/return-livre.component';
+import { EtudiantsComponent } from './Components/etudiants/etudiants.component';
+import { EmpruntesComponent } from './Components/empruntes/empruntes.component';
+import { CreateLivreComponent } from './Components/create-livre/create-livre.component';
+import { CreateStudentComponent } from './Components/create-student/create-student.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table'
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +39,9 @@ import { ReturnLivreComponent } from './return-livre/return-livre.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,4 +20,7 @@ export class EmpruntService {
   deleteEmprunt(id: string){
     return this.http.delete(environment.api+"/api/emprunts/"+id)
   }
+  findEmpruntByCriteria(livre:string){
+    return this.http.get<Emprunt[]>(environment.api+"/api/emprunts-by-criteria/"+livre);
+  }
 }

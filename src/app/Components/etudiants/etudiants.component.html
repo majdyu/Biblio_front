@@ -1,0 +1,28 @@
+<div class="container">
+    <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
+      (click)="goToCreatePage()">Ajouter un Etudiant</button>
+    <table class="table border">
+      <thead class="thead-light">
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Carte identitée</th>
+          <th> </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let  etudiant of etudiants">
+          <td>{{etudiant.firstName}}</td>
+          <td>{{etudiant.lastName}}</td>
+          <td>{{etudiant.email}}</td>
+          <td>{{etudiant.idNumber}}</td>
+          <td><a [routerLink]="['/editStudent', etudiant.id]"><i class="fa fa-edit fa-lg"></i></a></td>
+          <td><a style="color: red; cursor: pointer;" (click)="deleteStudent(etudiant.id)"><i class="fa fa-trash fa-lg"></i></a> </td>
+         
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>

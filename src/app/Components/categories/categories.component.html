@@ -1,0 +1,23 @@
+<div class="container">
+  
+    <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
+      (click)="goToCreatePage()">Ajouter une categorie</button>
+    <table class="table border">
+      <thead class="thead-light">
+        <tr>
+          <th>Nom</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let  category of categories">
+          <td>{{category.name}}</td>
+          <td><a [routerLink]="['/editCategory', category.id]"><i class="fa fa-edit fa-lg"></i></a></td>
+          <td><a style="color: red; cursor: pointer;" (click)="deleteCategory(category.id)"><i class="fa fa-trash fa-lg"></i></a></td>
+         
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>

@@ -1,0 +1,34 @@
+<div class="container">
+  <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
+    (click)="goToCreatePage()">Ajouter un livre</button>
+  <table class="table border">
+    <thead class="thead-light ">
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Categorie</th>
+        <th>Emprunter</th>
+        <th>Emprunteur</th>
+        <th>Date de retour</th>
+        <th> </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let  livre of livres">
+        <td>{{livre.name}}</td>
+        <td>{{livre.author}}</td>
+        <td>{{livre.category?.name}}</td>
+        <td>{{livre.isBorrowed}}</td>
+        <td *ngIf="livre.emprunt">{{livre.emprunt.student.firstName }} {{livre.emprunt.student.lastName }}  </td>
+        <td *ngIf="!livre.emprunt"> - </td>
+        <td *ngIf="livre.emprunt">{{livre.emprunt?.end | date : "dd/MM//yyy"}}</td>
+        <td *ngIf="!livre.emprunt"> - </td>
+        <td><a [routerLink]="['/editLivre', livre.id]"><i class="fa fa-edit fa-lg"></i></a></td>
+        <td><a style="color: red; cursor: pointer;" (click)="deleteLivre(livre.id)"><i class="fa fa-trash fa-lg"></i></a> </td>
+       
+      </tr>
+    </tbody>
+  </table>
+
+</div>

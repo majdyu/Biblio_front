@@ -1,0 +1,17 @@
+<div class="row align-items-center" style=" margin-top:  30px">
+    <div class="col-4"></div>
+    <form class="col-4" style="width: 40%;">
+        <h3 style="margin-bottom: 20px;">Ajouter une catégorie</h3>
+        <div class="form-group">
+            <label> Nom de la categorie</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="category.name">
+        </div>
+       
+        <div style=" text-align: center;">
+            <button class="btn btn-secondary " (click)="returnToList()"> Annuler</button>
+            <button class="btn btn-success ml-2" (click)="createCategory()">Créer </button>
+           
+        </div>
+        
+    </form>
+</div>
