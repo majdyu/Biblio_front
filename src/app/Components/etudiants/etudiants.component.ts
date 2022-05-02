@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Etudiant } from 'src/app/models/etudiant.model';
 import { EtudiantService } from 'src/app/services/etudiant.service';
 
@@ -14,7 +15,8 @@ export class EtudiantsComponent implements OnInit {
   etudiants: Etudiant[] = [];
   constructor(
     private etudiantService: EtudiantService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,9 @@ export class EtudiantsComponent implements OnInit {
   deleteStudent(id: string){
     this.etudiantService.deleteEtudiant(id).subscribe(()=> {
       this.loadAllStudents();
+    }, error => {
+     console.log(error.error.detail);
+     this.toastr.error(error.error.detail)
     })
   }
 }

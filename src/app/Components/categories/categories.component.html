@@ -1,8 +1,16 @@
+<div class="container mt-4">
+  <h1>Liste des categories </h1>
+</div>
+
+<ng-template #noCategory >
+Pas de categorie trouvée
+</ng-template>
+
 <div class="container">
   
     <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
       (click)="goToCreatePage()">Ajouter une categorie</button>
-    <table class="table border">
+    <table class="table border" *ngIf="categories && categories.length > 0; else noCategory">
       <thead class="thead-light">
         <tr>
           <th>Nom</th>

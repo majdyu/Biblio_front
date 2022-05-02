@@ -1,35 +1,45 @@
+
+<ng-template #noLoan>
+  <br>
+  <div class="container mr-5" style="text-align: center; margin-top: 200px;">
+    <h3>Aucun emprunt trouver</h3> 
+  </div>
+</ng-template>
+
+
+<div class="container mt-4">
+  <h1>Liste des emprunts </h1>
+</div>
+
 <div class="container mt-5" >
-  <div class="row" >
+  <div class="row"  *ngIf="emprunts.length > 0 || searching" style="margin-bottom: 50px;" >
     <div class="col-4"></div>
     <form class="col-4" style="width: 40%; ">
-        <div class="form-group" style="display: flex;">
+        <div class="form-group" style="display: flex;" >
           <label> Nom du livre</label>
           <input type="text" class="form-control" id="name" name="name" [(ngModel)]="nomLivre">
         </div>
-        <button class="btn btn-success"
-        (click)="search()">Chercher</button>
+        <div  style="text-align: center;">
+          <button class="btn btn-success"
+          (click)="search()">Chercher</button>
+        </div>
       </form>
   </div>
- 
 
-  <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
-    (click)="goToCreatePage()">Ajouter un livre</button>
-
-  <table class="table border" *ngIf="emprunts.length > 0">
+  <table class="table border"  *ngIf="emprunts.length > 0 ; else noLoan">
     <thead class="thead-light">
       <tr>
         <th>Livre</th>
         <th>Emprunteur</th>
         <th>Date debut</th>
         <th>Date fin</th>
-
         <th></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let  emprunt of emprunts">
         <td>{{emprunt.livre.name}}</td>
-        <td>{{emprunt.student.firstName}} {{emprunt.student.lastName}}</td>
+        <td>{{emprunt.loaner.firstName}} {{emprunt.loaner.lastName}}</td>
         <td>{{emprunt.start | date: "dd/MM/yyy"}}</td>
         <td>{{emprunt.end | date: "dd/MM/yyy"}}</td>
 

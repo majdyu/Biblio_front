@@ -29,15 +29,37 @@
             <span style="color: red;">Ce champ est obligatoire</span>
         </div>
         </div>
+
+
         <div class="form-group">
+            <label>Type d'emprunteur</label>
+            <select class="form-control" id="loanerType" name="loanerType" (ngModelChange)="onTypeChange($event)" [(ngModel)]="selectedType">
+                <option *ngFor="let loanerType of loanerTypes" [ngValue]="loanerType" >{{loanerType}}</option>
+            </select>
+        </div>
+
+
+
+        <div class="form-group" *ngIf="selectedType === 'Etudiant'">
             <label>Etudiants</label>
-            <select class="form-control" id="student" name="student" [(ngModel)]="emprunt.student">
+            <select class="form-control" id="student" name="student" [(ngModel)]="emprunt.loaner">
                 <option *ngFor="let etudiant of etudiants" [ngValue]="etudiant">{{etudiant.firstName}} {{etudiant.lastName}}</option>
             </select>
-            <div *ngIf="submitted && !emprunt.student">
+            <div *ngIf="submitted && !emprunt.loaner">
                 <span style="color: red;">Ce champ est obligatoire</span>
             </div>
         </div>
+
+        <div class="form-group" *ngIf="selectedType === 'Enseignant'">
+            <label>Enseignant</label>
+            <select class="form-control" id="teacher" name="teacher" [(ngModel)]="emprunt.loaner">
+                <option *ngFor="let teacher of teachers" [ngValue]="teacher">{{teacher.firstName}} {{teacher.lastName}}</option>
+            </select>
+            <div *ngIf="submitted && !emprunt.loaner">
+                <span style="color: red;">Ce champ est obligatoire</span>
+            </div>
+        </div>
+       
        
         <div style=" text-align: center;">
             <button class="btn btn-secondary " (click)="returnToList()"> Annuler</button>

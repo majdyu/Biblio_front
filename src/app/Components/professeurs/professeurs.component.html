@@ -1,1 +1,42 @@
-<p>professeurs works!</p>
+<ng-template #noTeacher>
+  <br>
+  <div class="container mr-5" style="text-align: center; margin-top: 200px;">
+    <h3>Aucun professeur trouver</h3> 
+  </div>
+</ng-template>
+
+
+<div class="container mt-4">
+  <h1>Liste des enseignants </h1>
+</div>
+
+
+<div class="container">
+  <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
+  (click)="goToCreatePage()">Ajouter un Enseignant</button>
+    <table class="table border" *ngIf="teachers && teachers.length > 0; else noTeacher ">
+      <thead class="thead-light">
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Carte identitée</th>
+          <th> </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let  teacher of teachers">
+          <td>{{teacher.firstName}}</td>
+          <td>{{teacher.lastName}}</td>
+          <td>{{teacher.email}}</td>
+          <td>{{teacher.idNumber}}</td>
+          <td><a [routerLink]="['/editStudent', teacher.id]"><i class="fa fa-edit fa-lg"></i></a></td>
+          <td><a style="color: red; cursor: pointer;" (click)="deleteTeacher(teacher.id)"><i class="fa fa-trash fa-lg"></i></a> </td>
+         
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+

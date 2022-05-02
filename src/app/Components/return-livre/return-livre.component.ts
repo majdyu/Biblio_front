@@ -13,6 +13,7 @@ import { LivreService } from '../../services/livre.service';
 export class ReturnLivreComponent implements OnInit {
   nomLivre: string
   emprunts : IEmprunt[]=[];
+  searching= false;
   constructor(
     private livreService: LivreService,
     private empruntService: EmpruntService,
@@ -40,6 +41,7 @@ export class ReturnLivreComponent implements OnInit {
     })
   }
   search(){
+    this.searching = true;
     if(!this.nomLivre || this.nomLivre == ""){
       this.loadAllEmprunts();
     }

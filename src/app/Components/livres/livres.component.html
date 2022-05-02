@@ -1,7 +1,18 @@
+<ng-template #noLivres>
+  <br>
+  <div class="container mr-5" style="text-align: center; margin-top: 200px;">
+    <h3>Aucun livre trouver</h3> 
+  </div>
+</ng-template>
+
+<div class="container mt-4">
+  <h1>Liste des livres </h1>
+</div>
+
 <div class="container">
   <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
     (click)="goToCreatePage()">Ajouter un livre</button>
-  <table class="table border">
+  <table class="table border" *ngIf="livres.length > 0 ; else noLivres">
     <thead class="thead-light ">
       <tr>
         <th>Name</th>
@@ -20,7 +31,7 @@
         <td>{{livre.author}}</td>
         <td>{{livre.category?.name}}</td>
         <td>{{livre.isBorrowed}}</td>
-        <td *ngIf="livre.emprunt">{{livre.emprunt.student.firstName }} {{livre.emprunt.student.lastName }}  </td>
+        <td *ngIf="livre.emprunt">{{livre.emprunt.loaner.firstName }} {{livre.emprunt.loaner.lastName }}  </td>
         <td *ngIf="!livre.emprunt"> - </td>
         <td *ngIf="livre.emprunt">{{livre.emprunt?.end | date : "dd/MM//yyy"}}</td>
         <td *ngIf="!livre.emprunt"> - </td>

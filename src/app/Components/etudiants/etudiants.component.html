@@ -1,7 +1,18 @@
+<ng-template #noStudent>
+  <br>
+  <div class="container mr-5" style="text-align: center; margin-top: 200px;">
+    <h3>Aucun etudiant trouver</h3> 
+  </div>
+</ng-template>
+
+
+<div class="container mt-4">
+  <h1>Liste des etudiants </h1>
+</div>
 <div class="container">
     <button class="btn btn-primary float-right" style="margin-bottom: 20px; margin-top: 20px;"
       (click)="goToCreatePage()">Ajouter un Etudiant</button>
-    <table class="table border">
+    <table class="table border" *ngIf="etudiants.length >0 ; else noStudent">
       <thead class="thead-light">
         <tr>
           <th>Nom</th>
