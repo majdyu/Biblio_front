@@ -6,7 +6,7 @@ export interface IEmprunt {
     start?: any;
     end?: any;
     livre?: Livre;
-    student?: Etudiant;
+    loaner?: Etudiant;
 
 }
 
@@ -16,6 +16,6 @@ export class Emprunt implements IEmprunt {
         public start?: any,
         public end?: any,
         public livre?: Livre,
-        public student?: Etudiant
+        public loaner?: Etudiant
     ) { }
 }

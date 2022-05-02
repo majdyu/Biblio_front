@@ -10,6 +10,7 @@ import { EtudiantsComponent } from './Components/etudiants/etudiants.component';
 import { EmpruntesComponent } from './Components/empruntes/empruntes.component';
 import { CreateLivreComponent } from './Components/create-livre/create-livre.component';
 import { CreateStudentComponent } from './Components/create-student/create-student.component';
+import { CreateTeacherComponent } from './Components/create-teacher/create-teacher.component';
 
 const routes: Routes = [{
   path: 'livres',
@@ -62,6 +63,10 @@ const routes: Routes = [{
 {
   path: "list-emprunts",
   component: ReturnLivreComponent
+},
+{
+  path: "createTeacher",
+  component : CreateTeacherComponent
 }
 ];
 

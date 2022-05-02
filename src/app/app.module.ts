@@ -17,6 +17,8 @@ import { CreateLivreComponent } from './Components/create-livre/create-livre.com
 import { CreateStudentComponent } from './Components/create-student/create-student.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table'
+import { ToastrModule } from 'ngx-toastr';
+import { CreateTeacherComponent } from './Components/create-teacher/create-teacher.component';
 
 
 
@@ -33,7 +35,8 @@ import {MatTableModule} from '@angular/material/table'
     CreateStudentComponent,
     CategoriesComponent,
     CreateCategoryComponent,
-    ReturnLivreComponent
+    ReturnLivreComponent,
+    CreateTeacherComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import {MatTableModule} from '@angular/material/table'
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
