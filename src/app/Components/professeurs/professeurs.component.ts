@@ -24,7 +24,7 @@ export class ProfesseursComponent implements OnInit {
   }
   loadAllTeachers() {
     this.teacherService.getAllTeachers().subscribe(res => {
-      console.log(res);
+
       
       this.teachers = res;
     })

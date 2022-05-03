@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,6 +19,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table'
 import { ToastrModule } from 'ngx-toastr';
 import { CreateTeacherComponent } from './Components/create-teacher/create-teacher.component';
+import { AuthInterceptor } from './services/auth.interceptor';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './services/auth.guard';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -36,7 +40,9 @@ import { CreateTeacherComponent } from './Components/create-teacher/create-teach
     CategoriesComponent,
     CreateCategoryComponent,
     ReturnLivreComponent,
-    CreateTeacherComponent
+    CreateTeacherComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,14 @@ import { CreateTeacherComponent } from './Components/create-teacher/create-teach
     MatTableModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

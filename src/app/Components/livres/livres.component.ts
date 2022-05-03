@@ -32,7 +32,7 @@ export class LivresComponent implements OnInit {
 
   loadAllLivres(){
     this.livreService.getAllLivre().subscribe(res => {
-      console.log(res);
+
       //@ts-ignore
       this.livres = res;
       this.dataSource = this.livres;

@@ -57,11 +57,10 @@ export class EmpruntesComponent implements OnInit {
   createEmprunt() {
     this.submitted = true;
     if (this.valideForm()) {
-        console.log(this.emprunt);
+
         this.emprunt.start = new Date(this.emprunt.start)
         this.emprunt.end = new Date(this.emprunt.end)
         this.empruntService.createEmprunt(this.emprunt).subscribe(res => {
-          console.log(res);
           this.router.navigate(['/list-emprunts'])
         })
     }

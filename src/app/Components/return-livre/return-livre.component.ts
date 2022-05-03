@@ -30,7 +30,6 @@ export class ReturnLivreComponent implements OnInit {
 
   loadAllEmprunts(){
     this.empruntService.getAllEmprunt().subscribe(res =>{
-      console.log(res);
       
       this.emprunts =res;
     })
@@ -47,7 +46,6 @@ export class ReturnLivreComponent implements OnInit {
     }
     else{
       this.empruntService.findEmpruntByCriteria(this.nomLivre).subscribe(res => {
-        console.log(res);
         this.emprunts =res
         
       })

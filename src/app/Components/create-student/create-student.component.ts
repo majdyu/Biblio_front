@@ -27,7 +27,7 @@ export class CreateStudentComponent implements OnInit {
       this.editMode = true;
       this.etudiantService.getEtudiantById(this.etudiantId).subscribe(res => {
         this.etudiant = res;     
-        console.log(this.etudiant);
+
            
       })
      }

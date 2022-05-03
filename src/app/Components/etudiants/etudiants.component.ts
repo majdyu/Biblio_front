@@ -34,7 +34,7 @@ export class EtudiantsComponent implements OnInit {
     this.etudiantService.deleteEtudiant(id).subscribe(()=> {
       this.loadAllStudents();
     }, error => {
-     console.log(error.error.detail);
+
      this.toastr.error(error.error.detail)
     })
   }

@@ -30,7 +30,6 @@ export class CreateLivreComponent implements OnInit {
       this.editMode = true;
       this.livreService.getLivreById(this.livreId).subscribe(res => {
         this.livre = res;
-        console.log(this.livre.category);
         
       })
      }
@@ -46,14 +45,14 @@ export class CreateLivreComponent implements OnInit {
   createLivre(){
     if(!this.editMode){
       this.livreService.createLivre(this.livre).subscribe(res => {
-        console.log(res);
+
         
         this.router.navigate(["/livres"])
       })
     }
     else {
       this.livreService.updateLivre(this.livre).subscribe(res => {
-        console.log(res);
+
         
         this.router.navigate(["/livres"])
       })
