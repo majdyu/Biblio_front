@@ -11,6 +11,7 @@ import { TeacherService } from 'src/app/services/teacher.service';
 export class CreateTeacherComponent implements OnInit {
   teacher = new Teacher();
   editMode = false;
+  teacherId: string;
   constructor(
     private router: Router,
     private teacherService: TeacherService,
@@ -18,6 +19,16 @@ export class CreateTeacherComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(param => {
+      this.teacherId = param['id'];
+     if(this.teacherId){
+      this.editMode = true;
+      this.teacherService.getTeacherById(this.teacherId).subscribe(res => {
+        this.teacher = res;     
+
+      })
+     }
+    })
   }
   createTeacher(){
     if(!this.editMode){

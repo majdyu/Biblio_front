@@ -22,7 +22,7 @@ export class TeacherService {
     return this.http.get(environment.api+"/api/teachers/"+id);
   }
   updateTeacher(teacher: Teacher){
-    return this.http.put(environment.api +"/api/teachers/"+teacher.id, Teacher);
+    return this.http.put(environment.api +"/api/teachers/"+teacher.id, teacher);
   }
   
   deleteTeacher(id: string){

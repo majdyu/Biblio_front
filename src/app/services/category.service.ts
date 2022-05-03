@@ -20,4 +20,7 @@ export class CategoryService {
   findById(id:string){
     return this.http.get(environment.api+"/api/categories/"+id);
   }
+  updateCategory(category: Category){
+    return this.http.put(environment.api+"/api/categories/"+category.id,category);
+  }
 }

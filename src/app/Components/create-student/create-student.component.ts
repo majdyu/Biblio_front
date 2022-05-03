@@ -37,8 +37,6 @@ export class CreateStudentComponent implements OnInit {
   createStudent(){
     if(!this.editMode){
       this.etudiantService.createEtudiant(this.etudiant).subscribe(res => {
-       
-        
         this.router.navigate(["/etudiants"])
       })
     }

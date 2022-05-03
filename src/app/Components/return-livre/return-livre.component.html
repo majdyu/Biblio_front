@@ -2,7 +2,7 @@
 <ng-template #noLoan>
   <br>
   <div class="container mr-5" style="text-align: center; margin-top: 200px;">
-    <h3>Aucun emprunt trouver</h3> 
+    <h3>Aucun emprunt trouvé</h3> 
   </div>
 </ng-template>
 
@@ -14,10 +14,11 @@
 <div class="container mt-5" >
   <div class="row"  *ngIf="emprunts.length > 0 || searching" style="margin-bottom: 50px;" >
     <div class="col-4"></div>
+    <label class="form-label mt-1"> Nom du livre</label>
     <form class="col-4" style="width: 40%; ">
         <div class="form-group" style="display: flex;" >
-          <label> Nom du livre</label>
-          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="nomLivre">
+         
+          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="nomLivre" placeholder="rechercher">
         </div>
         <div  style="text-align: center;">
           <button class="btn btn-success"

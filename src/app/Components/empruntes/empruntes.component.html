@@ -1,4 +1,12 @@
-<div class="row align-items-center" style=" margin-top:  30px">
+<ng-template #noBook>
+    <br>
+    <div class="container" style="text-align: center; margin-top: 200px;">
+      <h3>Aucune livre disponibles pour comprunt</h3> 
+    </div>
+  </ng-template>
+
+
+<div class="row align-items-center" style=" margin-top:  30px" *ngIf="livres.length >0; else noBook">
 
     <div class="col-4"></div>
     <form class="col-4" style="width: 40%;">

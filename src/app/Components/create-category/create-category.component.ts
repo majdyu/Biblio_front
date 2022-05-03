@@ -21,26 +21,34 @@ export class CreateCategoryComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(param => {
       this.categoryId = param['id'];
-     if(this.categoryId){
-      this.editMode = true;
-      this.categoryService.findById(this.categoryId).subscribe(res => {
-        this.category = res;
-       
-        
-      })
-     }
+      if (this.categoryId) {
+        this.editMode = true;
+        this.categoryService.findById(this.categoryId).subscribe(res => {
+          this.category = res;
+
+
+        })
+      }
     })
   }
   createCategory() {
-    this.categoryService.createCategory(this.category).subscribe(res => {
-      this.router.navigate(["/categories"])
-    })
+    if (this.editMode) {
+      this.categoryService.updateCategory(this.category).subscribe(res => {
+        this.router.navigate(["/categories"])
+      })
+    }
+    else {
+      this.categoryService.createCategory(this.category).subscribe(res => {
+        this.router.navigate(["/categories"])
+      })
+    }
+
   }
-  returnToList(){
+  returnToList() {
     this.router.navigate(["/categories"])
   }
-  deleteCategory(id: string){
-    
+  deleteCategory(id: string) {
+
   }
 
 }
