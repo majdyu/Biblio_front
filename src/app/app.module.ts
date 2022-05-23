@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LivresComponent } from './Components/livres/livres.component';
 import { ProfesseursComponent } from './Components/professeurs/professeurs.component';
-import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriesComponent } from './Components/categories/categories.component';
 import { CreateCategoryComponent } from './Components/create-category/create-category.component';
@@ -34,7 +33,6 @@ import { SignupComponent } from './signup/signup.component';
     LivresComponent,
     ProfesseursComponent,
     EmpruntesComponent,
-    HomeComponent,
     CreateLivreComponent,
     CreateStudentComponent,
     CategoriesComponent,

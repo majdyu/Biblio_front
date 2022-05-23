@@ -4,6 +4,7 @@ export interface IEtudiant {
     lastName?: string;
     email?: string;
     idNumber?: string;
+    phoneNumber?: string;
 
 }
 
@@ -14,5 +15,6 @@ export class Etudiant implements IEtudiant {
         public   lastName?: string,
         public  email?: string,
         public  idNumber?: string,
+        public  phoneNumber?: string
     ) {}
 }

@@ -1,0 +1,9 @@
+.image-blurred-edge {
+    background-image: url("../../assets/img/login page.jpg");
+    width: 300px;
+    height: 300px;
+    margin-top: 100px;
+    background-repeat:  no-repeat;
+    /* you need to match the shadow color to your background or image border for the desired effect*/
+    box-shadow: 0 0 10px 10px white inset;
+}

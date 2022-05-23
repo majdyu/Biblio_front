@@ -3,6 +3,7 @@ export interface ILivre {
     name?: string;
     author?: string;
     category?: string;
+    theme?:string;
     isBorrowed?: boolean;
 }
 
@@ -13,6 +14,7 @@ export class Livre {
         public name?: string,
         public author?: string,
         public category?: string,
+        public theme?:string,
         public isBorrowed?: boolean
     ) { }
 }

@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   loginMethod(){
     if(this.login.username && this.login.password){
       this.authService.authentication(this.login).subscribe(res => {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/livres'])
         localStorage.setItem("id_token", res.id_token);
    
       })

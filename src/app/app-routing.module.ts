@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from './Components/categories/categories.component';
 import { CreateCategoryComponent } from './Components/create-category/create-category.component';
-import { HomeComponent } from './home/home.component';
 import { LivresComponent } from './Components/livres/livres.component';
 import { ProfesseursComponent } from './Components/professeurs/professeurs.component';
 import { ReturnLivreComponent } from './Components/return-livre/return-livre.component';
@@ -38,10 +37,6 @@ const routes: Routes = [
         path: 'livres',
         component: LivresComponent,
 
-      },
-      {
-        path: "home",
-        component: HomeComponent
       },
 
       {

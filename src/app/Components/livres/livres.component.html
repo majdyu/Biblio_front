@@ -18,6 +18,7 @@
         <th>Name</th>
         <th>Author</th>
         <th>Categorie</th>
+        <th>Théme</th>
         <th>Emprunter</th>
         <th>Emprunteur</th>
         <th>Date de retour</th>
@@ -30,6 +31,7 @@
         <td>{{livre.name}}</td>
         <td>{{livre.author}}</td>
         <td>{{livre.category?.name}}</td>
+        <td>{{livre.theme}}</td>
         <td>{{livre.isBorrowed}}</td>
         <td *ngIf="livre.emprunt">{{livre.emprunt.loaner.firstName }} {{livre.emprunt.loaner.lastName }}  </td>
         <td *ngIf="!livre.emprunt"> - </td>
